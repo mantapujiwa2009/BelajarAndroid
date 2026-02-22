@@ -15,6 +15,8 @@ public class RegisterPage extends AppCompatActivity {
 
     Button Registerbtn;
 
+    Button btnSteam;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +24,17 @@ public class RegisterPage extends AppCompatActivity {
         setContentView(R.layout.activity_register_page);
 
         Registerbtn = (Button) findViewById(R.id.Registerbtn);
+        btnSteam = (Button) findViewById(R.id.btnSteam);
         Registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(RegisterPage.this, MainActivity.class));
+            }
+        });
+        btnSteam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterPage.this, CloningSteam.class));
             }
         });
     }
