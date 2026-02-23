@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BelajarAndroBing">
         <activity
+            android:name=".ConfirmRegister"
+            android:exported="false" />
+        <activity
             android:name=".CloningSteam"
             android:exported="false" />
         <activity
