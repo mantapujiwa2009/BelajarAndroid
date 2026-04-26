@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BelajarAndroBing">
         <activity
+            android:name=".SongDetails"
+            android:exported="false" />
+        <activity
+            android:name=".AdapterSongData"
+            android:exported="false" />
+        <activity
+            android:name=".ListSong"
+            android:exported="false" />
+        <activity
             android:name=".ListSiswa"
             android:exported="false" />
         <activity
