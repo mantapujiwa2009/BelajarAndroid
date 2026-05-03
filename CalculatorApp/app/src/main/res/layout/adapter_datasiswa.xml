@@ -1,34 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
+    android:orientation="vertical"
     android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
+    android:layout_marginBottom="15dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:textSize="30sp"
-        android:id="@+id/txtNama"
-        android:text="Nama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="10dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        app:cardBackgroundColor="#999e98">
 
-    <TextView
-        android:textSize="20sp"
-        android:id="@+id/txtAbsen"
-        android:text="Absen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/main"
-        android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:textSize="15sp"
-        android:id="@+id/txtAlamat"
-        android:text="Alamat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txtNama"
-        app:layout_constraintBottom_toBottomOf="@id/main"/>
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_marginTop="15dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginRight="50dp"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:id="@+id/txtNama"
+                        android:text="Nama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_gravity="right"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_marginStart="50dp"
+                        android:textSize="20sp"
+                        android:id="@+id/txtAbsen"
+                        android:text="Absen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_marginTop="15dp"
+                    android:textSize="15sp"
+                    android:id="@+id/txtAlamat"
+                    android:text="Alamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

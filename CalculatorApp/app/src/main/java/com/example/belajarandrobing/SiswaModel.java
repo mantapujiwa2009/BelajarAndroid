@@ -4,11 +4,13 @@ public class SiswaModel {
     String nama;
     String absen;
     String alamat;
+    int profile;
 
-    public SiswaModel(String nama, String absen, String alamat) {
+    public SiswaModel(String nama, String absen, String alamat, int profile) {
         this.nama = nama;
         this.absen = absen;
         this.alamat = alamat;
+        this.profile = profile;
     }
 
     public String getNama() {
@@ -21,5 +23,9 @@ public class SiswaModel {
 
     public String getAlamat() {
         return alamat;
+    }
+
+    public int getProfile() {
+        return profile;
     }
 }
