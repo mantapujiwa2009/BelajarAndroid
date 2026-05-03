@@ -22,6 +22,7 @@ public class CloningSteam extends AppCompatActivity {
     TextView txtLearn;
 
     Button btnSiswa;
+    Button btnSong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,14 @@ public class CloningSteam extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(CloningSteam.this, ListSiswa.class));
+            }
+        });
+
+        btnSong = (Button) findViewById(R.id.songBtn);
+        btnSong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CloningSteam.this, ListSong.class));
             }
         });
     }

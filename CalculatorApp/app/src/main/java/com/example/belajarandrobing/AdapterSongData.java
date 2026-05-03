@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -19,19 +21,28 @@ import java.util.List;
 public class AdapterSongData extends RecyclerView.Adapter<AdapterSongData.ViewHolder> {
 
     private List<SongModel> listSong;
+    private OnItemClickListener listenersong;
+    public interface OnItemClickListener {
+        void onItemClick(SongModel song);
+    }
 
-    public AdapterSongData(List<SongModel> listSong) {this.listSong = listSong;}
+    public AdapterSongData(List<SongModel> listSong, OnItemClickListener listenersong) {
+        this.listSong = listSong;
+        this.listenersong = listenersong;
+    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView songNameTv;
         TextView singerTv;
         TextView streamsTv;
+        ImageView songImg;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             songNameTv = itemView.findViewById(R.id.songNameTv);
             singerTv = itemView.findViewById(R.id.singerTv);
             streamsTv = itemView.findViewById(R.id.streamsTv);
+            songImg = itemView.findViewById(R.id.songImg);
         }
     }
 
@@ -53,6 +64,16 @@ public class AdapterSongData extends RecyclerView.Adapter<AdapterSongData.ViewHo
 
         String streams = listSong.get(position).getTotalStreams();
         holder.streamsTv.setText(streams);
+
+        int songImg = listSong.get(position).getSongProfile();
+        holder.songImg.setImageResource(songImg);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listenersong.onItemClick(listSong.get(position));
+            }
+        });
     }
 
     @Override
